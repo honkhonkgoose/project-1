@@ -12,7 +12,7 @@ public class Project1 {
 
         System.out.println("Project 1 : Point Tester\n");
 
-        Point a = new Point(3.0, 1.0);
+        Point a = new Point(3, 1);
         Point b = new Point();
         b.setPoint(6.0, 5.0);
 
