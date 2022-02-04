@@ -1,46 +1,48 @@
 package com.csc205.project1;
 
+
 import static org.junit.Assert.assertEquals;
 
-import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
 
 public class PointTest {
     @Test
-
-    void shiftsXCoordinate(){
+    public void testShiftX(){
         Point p1 = new Point(0,0);
         p1.shiftX(1);
-        Point p2 = new Point(1,0);
-        assertEquals(p2.toString(),
-                p1.toString(),
-                "Shifting the x by one should make Point{x = 1.0, y = 0}");
+        Assertions.assertEquals(
+                1.0,
+                p1.getX(),
+                "Shifting the x by one should make the value of x = 1");
     }
-    void shiftsYCoordinate(){
+    @Test
+    public void testshiftY(){
         Point p1 = new Point(0,0);
         p1.shiftY(1);
-        Point p2 = new Point(0,1);
-        assertEquals(p2.toString(),
-                p1.toString(),
-                "Shifting the x by one should make Point{x = 0, y = 1.0}");
+        Assertions.assertEquals(
+                1.0,
+                p1.getY(),
+                "Shifting the y by one should make y = 1");
     }
-    void rotatesCoordinates(){
+    @Test
+    public void testRotate(){
         Point p1 = new Point(0.0,3.0);
         double rotation = Math.PI / 2.0;
         p1.rotate(rotation);
         Point p2 = new Point(-3.0,-3.0);
-        assertEquals(p2.toString(),
+        Assertions.assertEquals(
+                p2.toString(),
                 p1.toString(),
-                "Shifting the x by one should make Point{x = 0, y = 1.0}");
+                "Rotating the point by pi/2 should make Point{x = -3.0, y = -3.0}");
     }
-    void distanceBetweenCoordinates(){
+    @Test
+    void testDistance(){
         Point p1 = new Point(0,0);
-        p1.shiftY(1);
         Point p2 = new Point(0,1);
-        assertEquals(p2.toString(),
-                p1.toString(),
+        Assertions.assertEquals(
+                1.0,
+                p1.distance(p2),
                 "Shifting the x by one should make Point{x = 0, y = 1.0}");
     }
 
