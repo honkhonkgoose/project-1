@@ -22,12 +22,11 @@ public class PointTest {
     }
     @Test
     public void testRotate(){
-        Point p1 = new Point(0.0,3.0);
+        Point p1 = new Point(-3,-3);
         double rotation = Math.PI / 2.0;
         p1.rotate(rotation);
-        Point p2 = new Point(-3.0,-3.0);
         Assertions.assertEquals(
-                -3.0,
+                3.0,
                 p1.getX());
         Assertions.assertEquals(
                 -3.0,
